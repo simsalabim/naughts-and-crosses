@@ -29,10 +29,6 @@ When(/^(?:|first |second )?human makes move to \((\d+), (\d+)\)$/) do |row, colu
   make_move(row, column)
 end
 
-Then(/^halt$/) do
-  sleep 300
-end
-
 Then(/^I should see board with winner$/) do
   wait_for_ajax
   expect(page).to have_css('.board.with-winner')
