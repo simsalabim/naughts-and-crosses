@@ -1,3 +1,3 @@
 [submodule "console_game"]
 	path = console_game
-	url = git@github.com:simsalabim/noughts-and-crosses.git
+	url = git://github.com/simsalabim/noughts-and-crosses.git
