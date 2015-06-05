@@ -1,0 +1,4 @@
+language: ruby
+script: "bundle exec cucumber"
+rvm:
+  - 2.2.2
