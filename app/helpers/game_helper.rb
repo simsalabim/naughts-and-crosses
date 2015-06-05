@@ -12,21 +12,11 @@ module GameHelper
   end
 
   def board_for(game)
-    array = []
-    for i in 0...game.rows_size
-      row = []
-      for j in 0...game.columns_size
-        move = game.moves.find_by(row: i, column: j)
-        cell = if move
-                 { row: move.row, column: move.column, token: move.token }
-               else
-                 { row: i, column: j, token: nil }
-               end
-
-        row << cell
+    game.replay_moves_on_console
+    game.console_game.board.map do |row|
+      row.map do |cell|
+        { row: cell.row, column: cell.column, token: cell.token }
       end
-      array << row
     end
-    array
   end
 end
