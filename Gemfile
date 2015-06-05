@@ -26,5 +26,6 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'capybara-webkit', github: 'thoughtbot/capybara-webkit'
   gem 'selenium-webdriver'
+  gem 'poltergeist'
   gem 'database_cleaner'
 end
