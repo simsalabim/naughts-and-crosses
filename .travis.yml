@@ -1,4 +1,5 @@
 language: ruby
+before_script: "cp config/database.example.yml config/database.yml"
 script: "bundle exec cucumber"
 rvm:
   - 2.2.2
