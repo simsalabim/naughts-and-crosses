@@ -11,6 +11,7 @@ When(/^I start new game with defaults$/) do
 end
 
 Then(/^I should see a blank game board$/) do
+  wait_for_requirejs
   expect(page).to have_css('.board')
   blank_count = page.evaluate_script("jQuery('.cell').filter(function(){ return !jQuery(this).data('token'); }).length")
   expect(blank_count).to eq 9
@@ -48,6 +49,16 @@ end
 def make_move(row, column)
   selector = "td[data-row=#{row}][data-column=#{column}]"
   page.execute_script "jQuery('#{selector}').click()"
+end
+
+def wait_for_requirejs
+  Timeout.timeout(5) do
+    loop until requirejs_modules_loaded?
+  end
+end
+
+def requirejs_modules_loaded?
+  page.evaluate_script("require.defined('game')") == true
 end
 
 def wait_for_ajax
