@@ -1,0 +1,34 @@
+.row.top-buffer
+  = form_for @game, html: { class: 'form-horizontal' } do |f|
+    .form-group
+      .col-xs-2.col-xs-offset-4
+        = f.label :rows_size, 'Rows', class: 'control-label'
+      .col-xs-2
+        = f.number_field :rows_size, within: (3..10), class: 'form-control'
+    .form-group
+      .col-xs-2.col-xs-offset-4
+        = f.label :columns_size, 'Columns', class: 'control-label'
+      .col-xs-2
+        = f.number_field :columns_size, within: (3..10), class: 'form-control'
+    .form-group
+      .col-xs-2.col-xs-offset-4
+        = f.label :winning_row_size, 'Winning streak', class: 'control-label'
+      .col-xs-2
+        = f.number_field :winning_row_size, within: (3..10), class: 'form-control'
+
+    .col-xs-8.col-xs-offset-2
+      %hr
+
+    = f.fields_for :players do |fp|
+      .form-group
+        .col-xs-2.col-xs-offset-2
+          = fp.label :token, class: 'control-label'
+        .col-xs-2
+          = fp.text_field :token, readonly: true, class: 'form-control'
+        .col-xs-2
+          = fp.label :strategy, class: 'control-label col-xs-1'
+        .col-xs-2
+          = fp.select :strategy, player_strategies_options, {}, class: 'form-control'
+
+    .form-group.top-buffer
+      = f.submit 'Start game', class: 'btn btn-primary col-xs-8 col-xs-offset-2'

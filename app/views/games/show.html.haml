@@ -1,0 +1,14 @@
+.row.top-buffer
+  .col-xs-8.col-xs-offset-2
+    %table.table.board
+      %tbody
+        - board_for(@game).each do |row|
+          %tr.row
+            - row.each do |cell|
+              %td.cell.col.col-xs-1{ data: { row: cell[:row], column: cell[:column], token: cell[:token] }, style: cell_inline_styles }
+
+.row
+  .col-xs-2.col-xs-offset-4
+    = link_to 'Rematch', rematch_game_path(@game), method: :post, class: 'action-rematch'
+  .col-xs-6
+    = link_to 'New game', new_game_path, class: 'action-new'

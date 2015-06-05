@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title Naughts And Crosses: play hot seat, face a bot or watch bots playing :)
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = requirejs_include_tag  'application'
+    = csrf_meta_tags
+    = Gon::Base.render_data({})
+  %body
+    .container
+      = yield

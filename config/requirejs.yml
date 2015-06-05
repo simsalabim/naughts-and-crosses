@@ -1,0 +1,13 @@
+paths:
+  jquery: 'jquery'
+  jquery_ujs: 'jquery_ujs'
+  turbolinks: 'turbolinks'
+
+shim:
+  jquery:
+    exports: 'jquery'
+  jquery_ujs:
+    deps: ['jquery']
+
+modules:
+  - name: 'application'

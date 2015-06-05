@@ -1,0 +1,26 @@
+ //= require_tree .
+ //= require_self
+
+.board
+  td:after
+    content: ""
+    display: block
+    margin-top: 100%
+
+.top-buffer
+  margin-top: 2em
+
+.cell
+  border: 1px solid #ddd
+  &[data-token="x"]
+    background-image: image-url("hamster_black_and_white.png")
+    background-size: cover
+  &[data-token="o"]
+    background-image: image-url("hamster_colorful.png")
+    background-size: cover
+
+.with-winner
+  td
+    opacity: 0.2
+  .winner
+    opacity: 1

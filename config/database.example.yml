@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: naughts_and_crosses_development
+
+test: &test
+  <<: *default
+  database: naughts_and_crosses_test
+
+production:
+  <<: *default
+  database: naughts_and_crosses_production
+
+cucumber:
+  <<: *test
