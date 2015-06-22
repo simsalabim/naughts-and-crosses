@@ -1,5 +1,6 @@
 # Naughts And Crosses 
 ![Build Status] (https://api.travis-ci.org/simsalabim/naughts-and-crosses.svg?branch=master "Build Status") [![Code Climate](https://codeclimate.com/github/simsalabim/naughts-and-crosses/badges/gpa.svg)](https://codeclimate.com/github/simsalabim/naughts-and-crosses) [![Dependency Status](https://gemnasium.com/simsalabim/naughts-and-crosses.svg)](https://gemnasium.com/simsalabim/naughts-and-crosses) [![security](https://hakiri.io/github/simsalabim/naughts-and-crosses/master.svg)](https://hakiri.io/github/simsalabim/naughts-and-crosses/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/simsalabim/naughts-and-crosses)
 
 Web UI bridge for a simple (M, N, W) [console game](https://github.com/simsalabim/noughts-and-crosses)
 
