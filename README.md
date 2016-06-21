@@ -6,6 +6,7 @@ Web UI bridge for a simple (M, N, W) [console game](https://github.com/simsalabi
 
 ## Installation
 ```shell
+brew install qt # for capybara-webkit
 bundle install
 cp config/database.example.yml config/database.yml
 bundle exec rake db:setup
